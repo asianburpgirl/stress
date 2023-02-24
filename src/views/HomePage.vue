@@ -2,17 +2,19 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Tab 1</ion-title>
+        <ion-title>Home</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true">
+    <ion-content :fullscreen="true" ion-padding>
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Tab 1</ion-title>
+          <ion-title size="large">Home</ion-title>
         </ion-toolbar>
       </ion-header>
-
-      <ExploreContainer name="Tab 1 page" />
+      <!-- can make use of ion-grid to contain your stuff -->
+      <ion-grid>
+       
+      </ion-grid>
     </ion-content>
   </ion-page>
 </template>
