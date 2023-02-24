@@ -1,0 +1,7 @@
+{
+  "name": "stressLess",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
