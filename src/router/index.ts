@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 import TabsPage from '../views/TabsPage.vue'
-//testing
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -15,6 +15,10 @@ const routes: Array<RouteRecordRaw> = [
       //   path: '',
       //   redirect: '/tabs/home'
       // },
+      {
+        path: 'activity',
+        component: () => import('@/views/ActivityPage.vue')
+      },
       {
         path: 'home',
         component: () => import('@/views/HomePage.vue')
