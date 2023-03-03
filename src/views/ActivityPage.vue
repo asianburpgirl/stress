@@ -78,7 +78,9 @@ import {
   IonContent,
   IonGrid,
   IonImg,
+  IonButton, alertController
 } from "@ionic/vue";
+import { defineComponent } from "vue";
 
 
 </script>
