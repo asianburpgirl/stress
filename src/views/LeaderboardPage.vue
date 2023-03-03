@@ -13,10 +13,7 @@
             </ion-header>
             <!-- can make use of ion-grid to contain your stuff -->
             <ion-grid>
-                <ion-card style="margin-left:20px;width: 340px; height: 700px">
-                <ion-img src="../assets/leaderboard.png"
-                  ></ion-img>
-                </ion-card>
+                <ion-img src="../assets/leaderboard.png"></ion-img>
             </ion-grid>
         </ion-content>
     </ion-page>
