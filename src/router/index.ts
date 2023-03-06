@@ -24,6 +24,10 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/ActivityPage.vue')
       },
       {
+        path: 'leaderboard',
+        component: () => import('@/views/LeaderboardPage.vue')
+      },
+      {
         path: 'home',
         component: () => import('@/views/HomePage.vue')
       },
