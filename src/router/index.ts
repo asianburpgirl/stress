@@ -38,6 +38,10 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'profile',
         component: () => import('@/views/ProfilePage.vue')
+      },
+      {
+        path: 'heartdata',
+        component: () => import('@/views/heartdataPage.vue')
       }
     ]
   }
