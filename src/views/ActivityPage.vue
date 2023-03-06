@@ -21,9 +21,8 @@
                   style="width: 45px; height: 45px; margin-left:170px; margin-top:20px"></ion-img>
               </ion-col>
               <ion-col size="6">
-                <ion-input
-                  style="border-radius:1rem;width:50px;background-color:white;
-                  margin-left:140px; margin-top:25px; color: black; text-align: center;"></ion-input>
+                <ion-input style="border-radius:1rem;width:50px;background-color:white;
+                          margin-left:140px; margin-top:25px; color: black; text-align: center;"></ion-input>
               </ion-col>
               <ion-col size="3">
                 <p style="margin-top:39px; margin-left:32px; font-weight:bold; color:white;">mins</p>
@@ -59,9 +58,10 @@
               Relax your mind, body, and soul with each breath.
             </p>
             <br>
-            <ion-button color="#FFB6C1" style="background-color:#FFB6C1; border-radius: 5vi; justify-self: center; display:flex;
-            font-weight:bold; color:#1a1a1a">
+            <ion-button @click="presentAlert" color="#FFB6C1" style="background-color:#FFB6C1; border-radius: 5vi; justify-self: center; display:flex;
+                    font-weight:bold; color:#1a1a1a">
               Start Breathing</ion-button>
+
           </ion-card-content>
         </ion-card>
       </ion-grid>
@@ -69,7 +69,9 @@
   </ion-page>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import { ref } from 'vue';
+import { RouteRecordRaw } from 'vue-router';
 import {
   IonPage,
   IonHeader,
@@ -77,10 +79,89 @@ import {
   IonTitle,
   IonContent,
   IonGrid,
-  IonImg,
-  IonButton, alertController
-} from "@ionic/vue";
-import { defineComponent } from "vue";
+  IonImg, IonButton, alertController,
+  IonCol,
+  IonInput
+} from '@ionic/vue';
+import router from "@/router";
+export default {
+  components: {
+    IonPage,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonImg,
+    IonButton,
+    IonCol,
+    IonInput
+  },
+  setup() {
+    const presentAlert = async () => {
+      const alert = await alertController.create({
+        header: 'Mission Complete!',
+        cssClass: 'custom-alert',
+        message: `
+      <div class="image-container">
+        <img src="../assets/business.png" alt="My Image">
+      </div>
+      <p>You have earned 15 points!</p>
+    `,
+        buttons: [
+          {
+            text: 'Cancel',
+            cssClass: 'alert-button-cancel',
+          },
+          {
+            text: 'View Leaderboard',
+            cssClass: 'alert-button-confirm',
+            handler: () => {
+              router.push('/tabs/leaderboard');
+            },
+          },
+        ],
+      });
 
+      await alert.present();
+    };
 
+    return { presentAlert };
+  },
+};
 </script>
+<style>
+ion-alert.custom-alert {
+  --backdrop-opacity: 0.7;
+}
+
+.custom-alert .image-container .img {
+  height: 10px;
+  width: 10px;
+}
+
+button.alert-button.alert-button-confirm {
+  width: 10px;
+  background-color: var(--ion-color-success);
+  color: var(--ion-color-success-contrast);
+}
+
+.md button.alert-button.alert-button-confirm {
+  border-radius: 4px;
+}
+
+.ios .custom-alert button.alert-button {
+  border: 0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2);
+}
+
+.ios button.alert-button.alert-button-cancel {
+  border-right: 0;
+  border-bottom-left-radius: 13px;
+  border-top-left-radius: 13px;
+}
+
+.ios button.alert-button.alert-button-confirm {
+  border-bottom-right-radius: 13px;
+  border-top-right-radius: 13px;
+}
+</style>
