@@ -74,14 +74,16 @@
                         </ion-row>
                         <ion-row style="margin: -30px auto; width: 95%">
                             <ion-col>
-                                <ion-card style="height: 90px; border-radius: 10px; background-color: #F2F7FF">
-                                    <ion-img src="../assets/deepbreathing.png"
-                                        style="width: 30%; display: block; margin: 15px auto">
-                                    </ion-img>
-                                    <ion-card-subtitle style="text-align: center; font-size: 0.6rem; margin-top: 10px">
-                                        Deep breathing
-                                    </ion-card-subtitle>
-                                </ion-card>
+                                <a href="/" style="text-decoration: none">
+                                    <ion-card style="height: 90px; border-radius: 10px; background-color: #F2F7FF">
+                                        <ion-img src="../assets/deepbreathing.png"
+                                            style="width: 30%; display: block; margin: 15px auto">
+                                        </ion-img>
+                                        <ion-card-subtitle style="text-align: center; font-size: 0.6rem; margin-top: 10px">
+                                            Deep breathing
+                                        </ion-card-subtitle>
+                                    </ion-card>
+                                </a>
                                 <ion-card
                                     style="height: 90px; margin-top: 20px; border-radius: 10px; background-color: #F2F7FF">
                                     <ion-img src="../assets/reading.png"
