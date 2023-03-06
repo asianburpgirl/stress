@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@capacitor/cli": "4.7.0",
+    "@iconify/vue": "^4.1.0",
     "@types/jest": "^27.0.2",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
