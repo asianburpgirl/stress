@@ -8,6 +8,10 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/tabs/home'
   },
   {
+    path: '/questionnaire',
+    component: () => import('@/views/QuestionnairePage.vue')
+  },
+  {
     path: '/tabs/',
     component: TabsPage,
     children: [
@@ -34,6 +38,10 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'profile',
         component: () => import('@/views/ProfilePage.vue')
+      },
+      {
+        path: 'heartdata',
+        component: () => import('@/views/heartdataPage.vue')
       }
     ]
   }
