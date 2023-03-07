@@ -14,37 +14,37 @@
       <!-- can make use of ion-grid to contain your stuff -->
       <ion-grid class="ion-text-center">
         <h1>Badges</h1>
-        <img src="../asset/woman.png" />
+        <img src="../../public/assets/woman.png" />
         <ion-card class="ion-padding ion-text-center">
           <ion-row>
             <ion-col size-md="4">
               <ion-avatar>
-                <img src="../asset/king.png" />
+                <img src="../../public/assets/king.png" />
               </ion-avatar>
             </ion-col>
             <ion-col size-md="4">
               <ion-avatar>
-                <img src="../asset/diamond.png" />
+                <img src="../../public/assets/diamond.png" />
               </ion-avatar>
             </ion-col>
             <ion-col size-md="4">
               <ion-avatar>
-                <img src="../asset/sword.png" />
+                <img src="../../public/assets/sword.png" />
               </ion-avatar>
             </ion-col>
             <ion-col size-md="4">
               <ion-avatar>
-                <img src="../asset/trophy.png" />
+                <img src="../../public/assets/trophy.png" />
               </ion-avatar>
             </ion-col>
             <ion-col size-md="4">
               <ion-avatar>
-                <img src="../asset/stars.png" />
+                <img src="../../public/assets/stars.png" />
               </ion-avatar>
             </ion-col>
             <ion-col size-md="4">
               <ion-avatar>
-                <img src="../asset/medal.png" />
+                <img src="../../public/assets/medal.png" />
               </ion-avatar>
             </ion-col>
           </ion-row>

@@ -35,13 +35,13 @@
         </ion-row>
         <ion-row class="ion-padding-top">
           <ion-col>
-            <img src="../asset/grin.png" />
+            <img src="../../public/assets/grin.png" />
           </ion-col>
           <ion-col>
-            <img src="../asset/queen.png" />
+            <img src="../../public/assets/queen.png" />
           </ion-col>
           <ion-col>
-            <img src="../asset/man.png" />
+            <img src="../../public/assets/man.png" />
           </ion-col>
         </ion-row>
         <ion-list class="ion-padding" lines="full">

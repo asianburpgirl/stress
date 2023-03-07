@@ -24,12 +24,12 @@
             <ion-grid>
               <ion-row class="ion-justify-content-center">
                 <ion-col class="ion-justify-content-center">
-                  <img src="../asset/heart.png" />
+                  <img src="../../public/assets/heart.png" />
                   <ion-card-subtitle>Heart rate</ion-card-subtitle>
                   <p>75 bpm </p>
                 </ion-col>
                 <ion-col>
-                  <img src="../asset/logo.png" />
+                  <img src="../../public/assets/logo.png" />
                   <ion-card-subtitle>
                     Respiratory rate
                   </ion-card-subtitle>
@@ -38,12 +38,12 @@
               </ion-row>
               <ion-row>
                 <ion-col>
-                  <img src="../asset/temperature.png" />
+                  <img src="../../public/assets/temperature.png" />
                   <ion-card-subtitle>Temperature</ion-card-subtitle>
                   <p>37˚C</p>
                 </ion-col>
                 <ion-col>
-                  <img src="../asset/brain.png" />
+                  <img src="../../public/assets/brain.png" />
                   <ion-card-subtitle>
                     Brain activity
                   </ion-card-subtitle>
@@ -61,7 +61,7 @@
         <ion-row>
           <ion-col size="6 " size-md="6">
             <ion-card class="ion-padding ion-text-center">
-              <img src="../asset/deep-breathing.png" />
+              <img src="../../public/assets/deep-breathing.png" />
               <ion-card-content>
                 <ion-card-subtitle>Breathing</ion-card-subtitle>
                 <p>10 mins</p>
@@ -70,7 +70,7 @@
           </ion-col>
           <ion-col size="6">
             <ion-card class="ion-padding ion-text-center">
-              <img src="../asset/open-book.png" />
+              <img src="../../public/assets/open-book.png" />
               <ion-card-content>
                 <ion-card-subtitle>Reading</ion-card-subtitle>
                 <p>30 mins</p>
@@ -81,7 +81,7 @@
         <ion-row>
           <ion-col size="6">
             <ion-card class="ion-padding ion-text-center">
-              <img src="../asset/farming.png" />
+              <img src="../../public/assets/farming.png" />
               <ion-card-content>
                 <ion-card-subtitle>Planting</ion-card-subtitle>
                 <p>1 hour</p>
@@ -90,7 +90,7 @@
           </ion-col>
           <ion-col size="6">
             <ion-card class="ion-padding ion-text-center">
-              <img src="../asset/yoga.png" />
+              <img src="../../public/assets/yoga.png" />
               <ion-card-content>
                 <ion-card-subtitle>Yoga</ion-card-subtitle>
                 <p>15 min</p>
