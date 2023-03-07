@@ -1,138 +1,149 @@
 <template>
-    <ion-page>
-        <ion-header>
-            <ion-toolbar>
-                <ion-title>Home</ion-title>
-            </ion-toolbar>
-        </ion-header>
-        <ion-content :fullscreen="true" ion-padding>
-            <ion-header collapse="condense">
-                <ion-toolbar>
-                    <ion-title size="large">Home</ion-title>
-                </ion-toolbar>
-            </ion-header>
-            <!-- can make use of ion-grid to contain your stuff -->
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Home</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content :fullscreen="true" ion-padding>
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Hello, Anna</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <!-- can make use of ion-grid to contain your stuff -->
+      <ion-grid>
+        <ion-card class="ion-padding">
+          <ion-card-header>
+            <p>How are you feeling today?</p>
+            <ion-card-subtitle>
+              Health Statistics:
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
             <ion-grid>
-                <ion-card style="width: 340px; height: 600px; background-color: white;">
-                    <ion-grid>
-                        <ion-row>
-                            <ion-card-header
-                                style="color: #5678AB; text-align: center; font-weight: bold; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 1.2rem; margin-left: 25px; margin-top:50px">
-                                Hello, Anna!
-                            </ion-card-header>
-                            <ion-card style="display: block; margin: auto; width: 275px; border-radius: 10px">
-                                <ion-card-header>
-                                    <ion-card-title
-                                        style="font-weight: bold; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 1rem">
-                                        How are you feeling today?
-                                    </ion-card-title>
-                                    <ion-card-subtitle style="font-size: 0.6rem">
-                                        Here's a summary of your health statistics:
-                                    </ion-card-subtitle>
-                                </ion-card-header>
-                                <ion-card-content>
-                                    <ion-grid>
-                                        <ion-row style="margin-left: -10px; margin-right: -10px">
-                                            <ion-col>
-                                                <ion-img src="../assets/heartrate.png"
-                                                    style="width: 25%; float: left; margin-right: 5px">
-                                                </ion-img>
-                                                <ion-card-subtitle style="font-size: 0.3rem">
-                                                    Heart rate:<br>75 bpm
-                                                </ion-card-subtitle>
-                                                <ion-img src="../assets/respiratoryrate.png"
-                                                    style="width: 25%; float: left; margin-right: 5px; margin-top: 20px">
-                                                </ion-img>
-                                                <ion-card-subtitle style="font-size: 0.3rem; margin-top: 20px">
-                                                    Respiratory rate: 18 bpm
-                                                </ion-card-subtitle>
-                                            </ion-col>
-                                            <ion-col>
-                                                <ion-img src="../assets/temperature.png"
-                                                    style="width: 25%; float: left; margin-right: 5px">
-                                                </ion-img>
-                                                <ion-card-subtitle style="font-size: 0.3rem">
-                                                    Temperature:<br>37˚C
-                                                </ion-card-subtitle>
-                                                <ion-img src="../assets/brainactivity.png"
-                                                    style="width: 25%; float: left; margin-right: 5px; margin-top: 20px">
-                                                </ion-img>
-                                                <ion-card-subtitle style="font-size: 0.3rem; margin-top: 20px">
-                                                    Brain activity:<br>1ms (fMRI)
-                                                </ion-card-subtitle>
-                                            </ion-col>
-                                        </ion-row>
-                                    </ion-grid>
-                                </ion-card-content>
-                            </ion-card>
-                        </ion-row>
-                        <ion-row>
-                            <ion-card-subtitle
-                                style="font-size: 0.6rem; font-weight: bold; text-align: center; margin: 30px auto">
-                                Here are some recommended therapies for you:
-                            </ion-card-subtitle>
-                        </ion-row>
-                        <ion-row style="margin: -30px auto; width: 95%">
-                            <ion-col>
-                                <a href="/" style="text-decoration: none">
-                                    <ion-card style="height: 90px; border-radius: 10px; background-color: #F2F7FF">
-                                        <ion-img src="../assets/deepbreathing.png"
-                                            style="width: 30%; display: block; margin: 15px auto">
-                                        </ion-img>
-                                        <ion-card-subtitle style="text-align: center; font-size: 0.6rem; margin-top: 10px">
-                                            Deep breathing
-                                        </ion-card-subtitle>
-                                    </ion-card>
-                                </a>
-                                <ion-card
-                                    style="height: 90px; margin-top: 20px; border-radius: 10px; background-color: #F2F7FF">
-                                    <ion-img src="../assets/reading.png"
-                                        style="width: 30%; display: block; margin: 15px auto">
-                                    </ion-img>
-                                    <ion-card-subtitle style="text-align: center; font-size: 0.6rem; margin-top: 10px">
-                                        Reading (30 min)
-                                    </ion-card-subtitle>
-                                </ion-card>
-                            </ion-col>
-                            <ion-col>
-                                <ion-card style="height: 90px; border-radius: 10px; background-color: #F2F7FF">
-                                    <ion-img src="../assets/gardening.png"
-                                        style="width: 30%; display: block; margin: 15px auto">
-                                    </ion-img>
-                                    <ion-card-subtitle style="text-align: center; font-size: 0.6rem; margin-top: 10px">
-                                        Gardening
-                                    </ion-card-subtitle>
-                                </ion-card>
-                                <ion-card
-                                    style="height: 90px; margin-top: 20px; border-radius: 10px; background-color: #F2F7FF">
-                                    <ion-img src="../assets/yoga.png" style="width: 30%; display: block; margin: 15px auto">
-                                    </ion-img>
-                                    <ion-card-subtitle style="text-align: center; font-size: 0.6rem; margin-top: 10px">
-                                        Doing yoga (15 min)
-                                    </ion-card-subtitle>
-                                </ion-card>
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
-                </ion-card>
+              <ion-row class="ion-justify-content-center">
+                <ion-col class="ion-justify-content-center">
+                  <img src="../../public/assets/heart.png" />
+                  <ion-card-subtitle>Heart rate</ion-card-subtitle>
+                  <p>75 bpm </p>
+                </ion-col>
+                <ion-col>
+                  <img src="../../public/assets/logo.png" />
+                  <ion-card-subtitle>
+                    Respiratory rate
+                  </ion-card-subtitle>
+                  <p>18 bpm</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <img src="../../public/assets/temperature.png" />
+                  <ion-card-subtitle>Temperature</ion-card-subtitle>
+                  <p>37˚C</p>
+                </ion-col>
+                <ion-col>
+                  <img src="../../public/assets/brain.png" />
+                  <ion-card-subtitle>
+                    Brain activity
+                  </ion-card-subtitle>
+                  <p>
+                    1ms (fMRI)
+                  </p>
+                </ion-col>
+              </ion-row>
             </ion-grid>
-        </ion-content>
-    </ion-page>
+          </ion-card-content>
+        </ion-card>
+      </ion-grid>
+      <ion-grid class="ion-padding">
+        <h4>Recommended Therapies</h4>
+        <ion-row>
+          <ion-col size="6 " size-md="6">
+            <ion-card class="ion-padding ion-text-center">
+              <img src="../../public/assets/deep-breathing.png" />
+              <ion-card-content>
+                <ion-card-subtitle>Breathing</ion-card-subtitle>
+                <p>10 mins</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card class="ion-padding ion-text-center">
+              <img src="../../public/assets/open-book.png" />
+              <ion-card-content>
+                <ion-card-subtitle>Reading</ion-card-subtitle>
+                <p>30 mins</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-card class="ion-padding ion-text-center">
+              <img src="../../public/assets/farming.png" />
+              <ion-card-content>
+                <ion-card-subtitle>Planting</ion-card-subtitle>
+                <p>1 hour</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card class="ion-padding ion-text-center">
+              <img src="../../public/assets/yoga.png" />
+              <ion-card-content>
+                <ion-card-subtitle>Yoga</ion-card-subtitle>
+                <p>15 min</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>
+  </ion-page>
 </template>
 
-<script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+<script lang="ts">
+import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+} from "@ionic/vue";
+
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  components: {
+    IonPage,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+  },
+});
 </script>
 
 <style scoped>
 /* iOS places the subtitle above the title */
-ion-card-header.ios {
-    display: flex;
-    flex-flow: column-reverse;
+
+/* ion-card-header.ios {
+  display: flex;
+  flex-flow: column-reverse;
+} */
+
+/* ion-card-title {
+  --color: gray;
+} */
+
+ion-img {
+  width: 20%;
+  height: 20%;
+  justify-content: center;
 }
 
-ion-card-title {
-    --color: gray
+ion-card {
+  background-color: #f2f7ff;
 }
 </style>

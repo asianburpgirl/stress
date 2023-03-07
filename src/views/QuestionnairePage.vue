@@ -30,22 +30,6 @@
             </ion-radio-group>
           </ion-list>
         </ion-card>
-        <!-- <ion-card color="tertiary">
-          <ion-card-header>
-            <ion-card-title>Question 1</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            How would you like to seek help?
-          </ion-card-content>
-          <ion-list>
-            <ion-radio-group>
-              <ion-item v-for="question in q1" :key="question.label">
-                <ion-label>{{ question.label }}</ion-label>
-                <ion-radio slot="end" :value="question.label"></ion-radio>
-              </ion-item>
-            </ion-radio-group>
-          </ion-list>
-        </ion-card> -->
       </ion-grid>
     </ion-content>
   </ion-page>
