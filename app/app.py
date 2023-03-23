@@ -51,8 +51,11 @@ def getECG():
 
     # Generate simulated ECG signal
     data = t.getEcg()
+    while data < 30:
+            data = t.getEcg()
+    
     return jsonify({
-        "ECG" : list(data[0])
+        "AVGHRV" : data 
     })
 
 # Start the app
