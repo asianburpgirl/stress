@@ -38,10 +38,9 @@ def ecg2():
     hrv = nk.hrv_time(rpeaks, sampling_rate=100)
     # Visualise the processing
     #nk.ecg_plot(signals, sampling_rate=250)
-    print(hrv)
     # Save it
     #plt.plot(signals["ECG_Clean"])
-    return float(hrv["HRV_SDNN"]) * 9.1
+    return float(hrv["HRV_SDNN"]) * 8.1
 #ecg2()
 # data = []
 # SDNN = []
