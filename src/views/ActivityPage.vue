@@ -16,22 +16,18 @@
         <ion-card class="ion-padding">
           <ion-card-content class="ion-text-center">
             <ion-row>
-              <ion-col size="3">
-              </ion-col>
-              <ion-col size="3">
-                
-              </ion-col>
+              <ion-col size="3"> </ion-col>
+              <ion-col size="3"> </ion-col>
               <ion-col size="6">
                 <ion-row>
-                  <ion-col>
+                  <ion-col size="2"></ion-col>
+                  <ion-col size="4">
                     <ion-img src="../assets/timer.png"></ion-img>
                   </ion-col>
-                  <ion-col>
-                    <ion-item>
-                      <ion-input></ion-input>
-                    </ion-item>
+                  <ion-col size="4">
+                    <ion-input placeholder="10"></ion-input>
                   </ion-col>
-                  <ion-col>
+                  <ion-col size="2">
                     <p>mins</p>
                   </ion-col>
                 </ion-row>
@@ -89,7 +85,7 @@ import {
   IonCol,
   IonInput,
   IonCard,
-  IonItem
+  // IonItem
 } from "@ionic/vue";
 
 import router from "../router/index";
@@ -108,7 +104,7 @@ export default defineComponent({
     IonCol,
     IonInput,
     IonCard,
-    IonItem
+    // IonItem
   },
   setup() {
     const presentAlert = async () => {
@@ -116,10 +112,11 @@ export default defineComponent({
         header: "Mission Complete!",
         cssClass: "custom-alert",
         message: `
-          <div class="image-container">
+          <div class="image-container ion-text-center ion-padding-top">
             <img src="../assets/business.png" alt="My Image">
+            <p>You have earned 15 points!</p>
           </div>
-          <p>You have earned 15 points!</p>
+          
         `,
         buttons: [
           {
@@ -145,8 +142,14 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.center {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
 ion-alert.custom-alert {
-  --backdrop-opacity: 0.7;
+  --backdrop-opacity: 0.8;
 }
 
 .custom-alert .image-container .img {
@@ -218,5 +221,18 @@ ion-col {
 ion-img{
   width: 70%;
   height: 70%;
+}
+
+ion-input.custom {
+    --background: none
+    --placeholder-opacity: .8;
+    --padding-bottom: 10px;
+    --padding-end: 10px;
+    --padding-start: 10px;
+    --padding-top: 10px;
+  }
+
+ion-item{
+  background: none;
 }
 </style>
