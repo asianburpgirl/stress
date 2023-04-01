@@ -60,7 +60,7 @@
         <h4>Recommended Therapies</h4>
         <ion-row>
           <ion-col size="6 " size-md="6">
-            <ion-card class="ion-padding ion-text-center">
+            <ion-card class="ion-padding ion-text-center" href="/tabs/breathing">
               <img src="../../public/assets/deep-breathing.png" />
               <ion-card-content>
                 <ion-card-subtitle>Breathing</ion-card-subtitle>
@@ -69,7 +69,7 @@
             </ion-card>
           </ion-col>
           <ion-col size="6">
-            <ion-card class="ion-padding ion-text-center">
+            <ion-card class="ion-padding ion-text-center" href="/tabs/reading">
               <img src="../../public/assets/open-book.png" />
               <ion-card-content>
                 <ion-card-subtitle>Reading</ion-card-subtitle>
@@ -80,7 +80,7 @@
         </ion-row>
         <ion-row>
           <ion-col size="6">
-            <ion-card class="ion-padding ion-text-center">
+            <ion-card class="ion-padding ion-text-center" href="/tabs/gardening">
               <img src="../../public/assets/farming.png" />
               <ion-card-content>
                 <ion-card-subtitle>Planting</ion-card-subtitle>
@@ -89,10 +89,30 @@
             </ion-card>
           </ion-col>
           <ion-col size="6">
-            <ion-card class="ion-padding ion-text-center">
+            <ion-card class="ion-padding ion-text-center" href="/tabs/yoga">
               <img src="../../public/assets/yoga.png" />
               <ion-card-content>
                 <ion-card-subtitle>Yoga</ion-card-subtitle>
+                <p>15 min</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-card class="ion-padding ion-text-center" href="/tabs/support">
+              <!-- <img src="../../public/assets/farming.png" /> -->
+              <ion-card-content>
+                <ion-card-subtitle>Social Support</ion-card-subtitle>
+                <p>1 hour</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card class="ion-padding ion-text-center" href="/tabs/professional">
+              <!-- <img src="../../public/assets/yoga.png" /> -->
+              <ion-card-content>
+                <ion-card-subtitle>Professional</ion-card-subtitle>
                 <p>15 min</p>
               </ion-card-content>
             </ion-card>

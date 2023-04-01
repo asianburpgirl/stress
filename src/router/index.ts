@@ -1,7 +1,14 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
+import QuestionnairePage from '../views/QuestionnairePage.vue';
 import TabsPage from '../views/TabsPage.vue';
 import LoginPage from '../views/LoginPage.vue';
+import BreathingPage from '../views/BreathingPage.vue';
+import GardeningPage from '../views/GardeningPage.vue';
+import YogaPage from '../views/YogaPage.vue';
+import ReadingPage from '../views/ReadingPage.vue';
+import SupportPage from '../views/SocialSupport.vue';
+import ProfessionalPage from '../views/ProfessionalPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/questionnaire',
-    component: () => import('@/views/QuestionnairePage.vue')
+    component: QuestionnairePage
   },
   {
     path: '/tabs/',
@@ -22,8 +29,28 @@ const routes: Array<RouteRecordRaw> = [
       //   redirect: '/tabs/home'
       // },
       {
-        path: 'activity',
-        component: () => import('@/views/ActivityPage.vue')
+        path: 'breathing',
+        component: BreathingPage
+      },
+      {
+        path: 'reading',
+        component: ReadingPage
+      },
+      {
+        path: 'yoga',
+        component: YogaPage
+      },
+      {
+        path: 'gardening',
+        component: GardeningPage
+      },
+      {
+        path: 'support',
+        component: SupportPage
+      },
+      {
+        path: 'professional',
+        component: ProfessionalPage
       },
       {
         path: 'home',
