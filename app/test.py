@@ -29,7 +29,8 @@ def getEcg():
     # plt.ylabel('Amplitude')
     #plt.show()
 def ecg2():
-    ecg = nk.ecg_simulate(duration=15, sampling_rate=100, heart_rate=random.randint(70,85), random_state=333)
+    hr = random.randint(70,85)
+    ecg = nk.ecg_simulate(duration=15, sampling_rate=100, heart_rate=hr, random_state=333)
 
     # Process it
     signals, info = nk.ecg_process(ecg, sampling_rate=100)
@@ -40,7 +41,7 @@ def ecg2():
     #nk.ecg_plot(signals, sampling_rate=250)
     # Save it
     #plt.plot(signals["ECG_Clean"])
-    return float(hrv["HRV_SDNN"]) * 8.1
+    return (float(hrv["HRV_SDNN"]) * 8.1,hr)
 #ecg2()
 # data = []
 # SDNN = []
