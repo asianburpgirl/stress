@@ -60,7 +60,9 @@ def getAllData():
 @cross_origin(origins="*")
 def getECG():
 
-    SDNN = t.ecg2()
+    HRdata = t.ecg2()
+    SDNN = HRdata[0]
+    HR = HRdata[1]
     print(SDNN)
     filename = 'decision_tree_model.sav'
     loaded_model = joblib.load(filename)
@@ -70,12 +72,13 @@ def getECG():
     data = {
         "Date" : datetime.datetime.today().strftime('%d/%m/%Y'),
         "SDNN" : SDNN,
+        "HR" : HR,
         "Stress" : prediction
     }
     with open('userdata.json', 'r') as f:
     # Load the contents of the file into a dictionary
         userdata = json.load(f)
-    userdata = userdata["Data"]
+    #userdata = userdata["Data"]
     userdata.append(data)
     with open('userdata.json', 'w') as f:
         json.dump(userdata, f)
