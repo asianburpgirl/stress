@@ -23,20 +23,23 @@
           </ion-card-content>
           <ion-list>
             <ion-radio-group>
-              <ion-item v-for="option in question.options" :key="option.label">
+              <ion-item v-model="selectedOption" v-for="option in question.options" :key="option.label">
                 <ion-label>{{ option.label }}</ion-label>
-                <ion-radio slot="end" :value="option.label"></ion-radio>
+                <ion-radio  @click="addToList(option)" slot="end" :value="option.label"></ion-radio>
               </ion-item>
             </ion-radio-group>
           </ion-list>
         </ion-card>
+        <ion-button @click="submitForm()">Default</ion-button>
       </ion-grid>
     </ion-content>
   </ion-page>
 </template>
 
-<script lang="ts">
+<script>
+
 import {
+  IonButton,
   IonPage,
   IonHeader,
   IonToolbar,
@@ -55,9 +58,10 @@ import {
 } from "@ionic/vue";
 
 import { defineComponent } from "vue";
-
+const responseData = "http://127.0.0.1:5000/saveresponse";
 export default defineComponent({
   components: {
+    IonButton,
     IonPage,
     IonHeader,
     IonToolbar,
@@ -76,6 +80,8 @@ export default defineComponent({
   },
   data() {
     return {
+      selectedOption: [],
+      //response:[],
       questionList: [
         {
             id: 1,
@@ -174,6 +180,24 @@ export default defineComponent({
       ],
     };
   },
+  methods: {
+    submitForm() {
+      console.log(this.selectedOption); // Do something with the selected value
+    }
+    ,
+    addToList(option){
+      this.selectedOption.push(option.label)
+    }
+  }
+  // methods: {
+  //   getResponse() {
+  //     const data = fetch(responseData, {
+  //       method: "POST",
+  //     }).then((data) => {
+  //       console.log(data);
+  //     });
+  //   },
+  // }
 });
 </script>
 

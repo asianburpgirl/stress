@@ -24,7 +24,7 @@
             <ion-grid>
               <ion-row class="ion-justify-content-center">
                 <ion-col class="ion-justify-content-center">
-                  <img src="../../public/assets/heart.png" />
+                  <img src="../../public/assets/heart.png" @click="$router.push('/tabs/heartdata')" />
                   <ion-card-subtitle>Heart rate</ion-card-subtitle>
                   <p>75 bpm </p>
                 </ion-col>
