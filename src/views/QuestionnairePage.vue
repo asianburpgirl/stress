@@ -19,13 +19,13 @@
             <ion-card-title>Question {{ question.id }}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            {{question.question}}
+            {{ question.question }}
           </ion-card-content>
           <ion-list>
             <ion-radio-group>
               <ion-item v-model="selectedOption" v-for="option in question.options" :key="option.label">
                 <ion-label>{{ option.label }}</ion-label>
-                <ion-radio  @click="addToList(option)" slot="end" :value="option.label"></ion-radio>
+                <ion-radio @click="addToList(option)" slot="end" :value="option.label"></ion-radio>
               </ion-item>
             </ion-radio-group>
           </ion-list>
@@ -56,7 +56,7 @@ import {
   IonItem,
   IonLabel,
 } from "@ionic/vue";
-
+import axios from 'axios';
 import { defineComponent } from "vue";
 const responseData = "http://127.0.0.1:5000/saveresponse";
 export default defineComponent({
@@ -84,88 +84,88 @@ export default defineComponent({
       //response:[],
       questionList: [
         {
-            id: 1,
-            question: "What brings you to this mental health application?",
-            options: [
-                {
-                    label: "To destress myself"
-                },
-                {
-                    label: "To explore the application"
-                }
-            ]
+          id: 1,
+          question: "What brings you to this mental health application?",
+          options: [
+            {
+              label: "To destress myself"
+            },
+            {
+              label: "To explore the application"
+            }
+          ]
         },
         {
-            id: 2,
-            question: "Have you ever received mental health treatment before?",
-            options: [
-                {
-                    label: "Yes"
-                },
-                {
-                    label: "No"
-                }
-            ]
+          id: 2,
+          question: "Have you ever received mental health treatment before?",
+          options: [
+            {
+              label: "Yes"
+            },
+            {
+              label: "No"
+            }
+          ]
         },
         {
-            id: 3,
-            question: "Have you ever been diagnosed with a mental health condition?",
-            options: [
-                {
-                    label: "Yes"
-                },
-                {
-                    label: "No"
-                }
-            ]
+          id: 3,
+          question: "Have you ever been diagnosed with a mental health condition?",
+          options: [
+            {
+              label: "Yes"
+            },
+            {
+              label: "No"
+            }
+          ]
         },
         {
-            id: 4,
-            question: "Are you currently taking any medications for your mental health?",
-            options: [
-                {
-                    label: "Yes"
-                },
-                {
-                    label: "No"
-                }
-            ]
+          id: 4,
+          question: "Are you currently taking any medications for your mental health?",
+          options: [
+            {
+              label: "Yes"
+            },
+            {
+              label: "No"
+            }
+          ]
         },
         {
-            id: 5,
-            question: "How would you rate your current level of distress related to your mental health?",
-            options: [
-                {
-                    label: "1"
-                },
-                {
-                    label: "2"
-                },
-                {
-                    label: "3"
-                },
-                {
-                    label: "4"
-                },
-                {
-                    label: "5"
-                },
-                {
-                    label: "6"
-                },
-                {
-                    label: "7"
-                },
-                {
-                    label: "8"
-                },
-                {
-                    label: "9"
-                },
-                {
-                    label: "10"
-                }
-            ]
+          id: 5,
+          question: "How would you rate your current level of distress related to your mental health?",
+          options: [
+            {
+              label: "1"
+            },
+            {
+              label: "2"
+            },
+            {
+              label: "3"
+            },
+            {
+              label: "4"
+            },
+            {
+              label: "5"
+            },
+            {
+              label: "6"
+            },
+            {
+              label: "7"
+            },
+            {
+              label: "8"
+            },
+            {
+              label: "9"
+            },
+            {
+              label: "10"
+            }
+          ]
         },
         {
           id: 6,
@@ -181,13 +181,29 @@ export default defineComponent({
     };
   },
   methods: {
-    submitForm() {
-      console.log(this.selectedOption); // Do something with the selected value
+    async submitForm() {
+      try {
+        const response = await axios.post(responseData, { options: this.selectedOption });
+        console.log(response.data); // Do something with the response data
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    addToList(option) {
+      const index = this.selectedOption.indexOf(option.label);
+      if (index > -1) {
+        this.selectedOption.splice(index, 1);
+      } else {
+        this.selectedOption.push(option.label);
+      }
     }
-    ,
-    addToList(option){
-      this.selectedOption.push(option.label)
-    }
+    // submitForm() {
+    //   console.log(this.selectedOption); // Do something with the selected value
+    // }
+    //,
+    // addToList(option) {
+    //   this.selectedOption.push(option.label)
+    // }
   }
   // methods: {
   //   getResponse() {
