@@ -101,7 +101,7 @@
         <ion-row>
           <ion-col size="6">
             <ion-card class="ion-padding ion-text-center" v-if="result1 === 'Need Social Support' || result1 === 'Both'" href="/tabs/support">
-             
+              <img src="../../public/assets/social-support.png" />
               <ion-card-content>
                 <ion-card-subtitle>Social Support</ion-card-subtitle>
                 <p>1 hour</p>
@@ -110,7 +110,7 @@
           </ion-col>
           <ion-col size="6">
             <ion-card class="ion-padding ion-text-center" v-if="result1 === 'Need Social Support' || result1 === 'Both'" href="/tabs/professional">
-              
+              <img src="../../public/assets/professional-help.png" />
               <ion-card-content>
                 <ion-card-subtitle>Professional</ion-card-subtitle>
                 <p>15 min</p>

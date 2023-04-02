@@ -25,7 +25,7 @@
                     <ion-img src="../assets/timer.png"></ion-img>
                   </ion-col>
                   <ion-col size="4">
-                    <ion-input placeholder="10"></ion-input>
+                    <ion-input placeholder="15"></ion-input>
                   </ion-col>
                   <ion-col size="2">
                     <p>mins</p>
