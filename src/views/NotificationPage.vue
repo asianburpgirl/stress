@@ -15,20 +15,7 @@
             <ion-grid>
                 <ion-list>
                     <ion-item>
-                        <ion-label>Deep Breathing</ion-label>
-                        <ion-button>Start Challenge</ion-button>
-                    </ion-item>
-                    <ion-item>
-                        <ion-label>Yoga</ion-label>
-                        <ion-button>Start Challenge</ion-button>
-                    </ion-item>
-                    <ion-item>
-                        <ion-label>Planting</ion-label>
-                        <ion-button>Start Challenge</ion-button>
-                    </ion-item>
-                    <ion-item>
-                        <ion-label>Reading</ion-label>
-                        <ion-button>Start Challenge</ion-button>
+                        <ion-label>Your Stress Level is {{ result }} today.</ion-label>            
                     </ion-item>
                 </ion-list>
             </ion-grid>
@@ -36,6 +23,61 @@
     </ion-page>
 </template>
 
-<script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid } from '@ionic/vue';
+<script lang="ts">
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonList, IonItem, IonLabel } from '@ionic/vue';
+import { defineComponent } from "vue";
+import axios from "axios";
+
+export default defineComponent({
+  components: {
+    IonPage,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonList,
+    IonItem,
+    IonLabel
+  },
+  data() {
+    return {
+      result: 0,
+    };
+  },
+  methods:{
+    getStressValue(){
+        axios.get("http://127.0.0.1:5000/newData")
+      .then(response => {
+        const responseData = response.data;
+        this.result = responseData["Stress"];
+        console.log(this.result)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    },
+    // presentAlert() {
+    //   return alertController
+    //     .create({
+    //       header: 'STRESS ALERT',
+    //       subHeader: 'Keep Calm and Relax',
+    //       message: 'You are feeling stressed. Please check your notifications for the challenges.',
+    //       buttons: this.alertButtons
+    //     })
+    //     .then(a => a.present())
+    // },
+  },
+  mounted() {
+    this.getStressValue();
+  },
+  // watch: {
+  //   result() {
+  //     if (this.result > 2) {
+  //       this.presentAlert();
+  //     }
+  //   },
+  // },
+});
+
 </script>

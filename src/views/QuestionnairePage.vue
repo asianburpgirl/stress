@@ -30,7 +30,7 @@
             </ion-radio-group>
           </ion-list>
         </ion-card>
-        <ion-button @click="submitForm()">Default</ion-button>
+        <ion-button href="/tabs/home" @click="submitForm()">Submit</ion-button>
       </ion-grid>
     </ion-content>
   </ion-page>
@@ -184,7 +184,7 @@ export default defineComponent({
     async submitForm() {
       try {
         const response = await axios.post(responseData, { options: this.selectedOption });
-        console.log(response.data); // Do something with the response data
+        console.log(response.data); 
       } catch (error) {
         console.error(error);
       }
@@ -197,23 +197,8 @@ export default defineComponent({
         this.selectedOption.push(option.label);
       }
     }
-    // submitForm() {
-    //   console.log(this.selectedOption); // Do something with the selected value
-    // }
-    //,
-    // addToList(option) {
-    //   this.selectedOption.push(option.label)
-    // }
+ 
   }
-  // methods: {
-  //   getResponse() {
-  //     const data = fetch(responseData, {
-  //       method: "POST",
-  //     }).then((data) => {
-  //       console.log(data);
-  //     });
-  //   },
-  // }
 });
 </script>
 

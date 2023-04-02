@@ -8,10 +8,10 @@
           <ion-label>Home</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="notification" href="/tabs/notification">
+        <!-- <ion-tab-button tab="notification" href="/tabs/notification">
           <ion-icon aria-hidden="true" :icon="mail" />
           <ion-label>Notification</ion-label>
-        </ion-tab-button>
+        </ion-tab-button> -->
 
         <ion-tab-button tab="leaderboard" href="/tabs/leaderboard">
           <ion-icon aria-hidden="true" :icon="trophy" />
@@ -27,7 +27,16 @@
   </ion-page>
 </template>
 
-<script setup lang="ts">
+<script>
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-import { ellipse, home, mail, person, square, triangle, trophy } from 'ionicons/icons';
+import { home, mail, person, trophy } from 'ionicons/icons';
+import { defineComponent } from "vue";
+export default defineComponent({
+  components: {
+    IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet
+  },
+  setup(){
+    return { home, mail, person, trophy }
+  },
+});
 </script>
