@@ -22,7 +22,7 @@
                 <ion-row>
                   <ion-col size="2"></ion-col>
                   <ion-col size="4">
-                    <ion-img src="../assets/timer.png"></ion-img>
+                    <ion-img src="../assets/black-timer.png"></ion-img>
                   </ion-col>
                   <ion-col size="4">
                     <ion-input placeholder="10"></ion-input>
@@ -36,30 +36,30 @@
 
             <ion-row class="ion-padding-bottom">
               <ion-col size="3">
-                <ion-img class="left-arrow" src="../assets/left-arrow.png">
+                <ion-img class="left-arrow" src="../assets/black-arrow.png">
                 </ion-img>
               </ion-col>
               <ion-col size="6" class="grid ion-justify-content-center">
                 <ion-img
                   class="activity"
-                  src="../assets/deepbreath.png"
+                  src="../assets/social-care.png"
                 ></ion-img>
               </ion-col>
               <ion-col size="3">
-                <ion-img class="right-arrow" src="../assets/right-arrow.png">
+                <ion-img class="right-arrow" src="../assets/black-arrow-left.png">
                 </ion-img>
               </ion-col>
             </ion-row>
             <div class="ion-padding-top">
-              <p>Petals flowing in the wind</p>
-              <p>Relax your mind, body, and soul with each breath.</p>
+              <p>You are loved and valued.</p>
+              <p>Surround yourself with people who lift you up and support your growth.</p>
               <ion-button
                 expand="block"
                 shape="round"
-                color="tertiary"
+                color="primary"
                 @click="presentAlert"
               >
-                Start Breathing</ion-button
+                Start Communicating</ion-button
               >
             </div>
           </ion-card-content>
@@ -208,7 +208,7 @@ p {
 }
 
 ion-card {
-  background-color: #ccd7fb;
+  background-color: #fbcce8;
 }
 
 ion-col {

@@ -61,7 +61,6 @@
         <ion-row>
           <ion-col size="6 " size-md="6">
             <ion-card class="ion-padding ion-text-center" v-if="result1 === 'Self-help Methods' || result1 === 'Both'" href="/tabs/breathing">
-
               <img src="../../public/assets/deep-breathing.png" />
               <ion-card-content>
                 <ion-card-subtitle>Breathing</ion-card-subtitle>

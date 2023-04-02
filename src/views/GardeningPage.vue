@@ -22,7 +22,7 @@
                   <ion-row>
                     <ion-col size="2"></ion-col>
                     <ion-col size="4">
-                      <ion-img src="../assets/timer.png"></ion-img>
+                      <ion-img src="../assets/black-timer.png"></ion-img>
                     </ion-col>
                     <ion-col size="4">
                       <ion-input placeholder="10"></ion-input>
@@ -36,30 +36,30 @@
   
               <ion-row class="ion-padding-bottom">
                 <ion-col size="3">
-                  <ion-img class="left-arrow" src="../assets/left-arrow.png">
+                  <ion-img class="left-arrow" src="../assets/black-arrow.png">
                   </ion-img>
                 </ion-col>
                 <ion-col size="6" class="grid ion-justify-content-center">
                   <ion-img
                     class="activity"
-                    src="../assets/deepbreath.png"
+                    src="../assets/gardening_activity.png"
                   ></ion-img>
                 </ion-col>
                 <ion-col size="3">
-                  <ion-img class="right-arrow" src="../assets/right-arrow.png">
+                  <ion-img class="right-arrow" src="../assets/black-arrow-left.png">
                   </ion-img>
                 </ion-col>
               </ion-row>
               <div class="ion-padding-top">
-                <p>Petals flowing in the wind</p>
-                <p>Relax your mind, body, and soul with each breath.</p>
+                <p>Start planting your seeds</p>
+                <p>Relax your mind, body, and soul as you embark on your gardening journey.</p>
                 <ion-button
                   expand="block"
                   shape="round"
-                  color="tertiary"
+                  color="success"
                   @click="presentAlert"
                 >
-                  Start Breathing</ion-button
+                  Start Gardening</ion-button
                 >
               </div>
             </ion-card-content>
@@ -85,7 +85,6 @@
     IonCol,
     IonInput,
     IonCard,
-    // IonItem
   } from "@ionic/vue";
   
   import router from "../router/index";
@@ -104,7 +103,6 @@
       IonCol,
       IonInput,
       IonCard,
-      // IonItem
     },
     setup() {
       const presentAlert = async () => {
@@ -208,7 +206,7 @@
   }
   
   ion-card {
-    background-color: #ccd7fb;
+    background-color: #f1c1e6;
   }
   
   ion-col {
