@@ -12,10 +12,12 @@
         </ion-toolbar>
       </ion-header>
       <!-- can make use of ion-grid to contain your stuff -->
-      <ion-grid class="ion-text-center">
-        <h1>Badges</h1>
+      <ion-grid class="ion-text-center ion-padding">
+        
         <img src="../../public/assets/woman.png" />
-        <ion-card class="ion-padding ion-text-center">
+       
+        <ion-card class="ion-padding">
+           <h4 class="ion-text-start">Badges Earned</h4>
           <ion-row>
             <ion-col size-md="4">
               <ion-avatar>
@@ -48,7 +50,21 @@
               </ion-avatar>
             </ion-col>
           </ion-row>
+         
         </ion-card>
+        
+      </ion-grid>
+      <ion-grid class="ion-padding">
+        <h4>Account Settings</h4>
+        <ion-list class="ion-padding-bottom">
+          <ion-item>
+            <ion-label>Edit Profile</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Settings</ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-button href="/" fill="outline" expand="block">Log Out</ion-button>
       </ion-grid>
     </ion-content>
   </ion-page>
