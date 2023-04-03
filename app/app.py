@@ -59,7 +59,6 @@ def getAllData():
 @app.route('/newData', methods = ['GET'])
 @cross_origin(origins="*")
 def getECG():
-
     HRdata = t.ecg2()
     SDNN = HRdata[0]
     HR = HRdata[1]

@@ -8,23 +8,9 @@
     <ion-content ion-padding>
     <canvas id="mychart"></canvas>
     <canvas id="mychart2"></canvas>
-      <!-- <ion-grid> -->
         <div v-for="i in HRresult" :key="i">
           <p>{{ i["HR"] }}</p>
         </div>
-      <!-- <ion-row> -->
-        <!-- <ion-col>
-          <div class="chart-container">
-            <LineChart :data="heartRateData"></LineChart>
-          </div>
-        </ion-col> --> 
-        <!-- <ion-col>
-          <div class="chart-container">
-            <LineChart :data="hrvData"></LineChart>
-          </div>
-        </ion-col> -->
-      <!-- </ion-row>
-      </ion-grid> -->
       <ion-card>
         <ion-card-header>
           <ion-card-title>Heart Rate</ion-card-title>
@@ -33,7 +19,6 @@
           <ion-list>
             <ion-item v-for="item in revenueData" :key="item.id">
               <ion-label>{{ item.label }}</ion-label>
-
               <ion-note slot="end">{{ item.amount }}</ion-note>
             </ion-item>
           </ion-list>
@@ -76,7 +61,7 @@ import {
   // IonGrid,
   IonCol,
 } from "@ionic/vue";
-//import { Bar, Line } from "vue-chartjs";
+
 import {
   Chart as ChartJS,
   Title,
@@ -131,14 +116,13 @@ export default defineComponent({
     return {
         dataList: [],
         HRresult: [],
+      
       heartRateData: {
-        labels:[],
-        // labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
         datasets: [
           {
             label: "Heart Rate",
-            data: [] ,
-              // data: this.HRresult,
+            data: [],
             backgroundColor: "rgba(255, 99, 132, 0.2)",
             borderColor: "rgba(255, 99, 132, 1)",
             borderWidth: 1,
@@ -283,6 +267,7 @@ export default defineComponent({
     },
   },
   );
+
 </script>
 
 <style scoped>
