@@ -30,7 +30,7 @@
             </ion-radio-group>
           </ion-list>
         </ion-card>
-        <ion-button href="/tabs/home" @click="submitForm()">Submit</ion-button>
+        <ion-button fill="outline" expand="block" href="/tabs/home" @click="submitForm()">Submit</ion-button>
       </ion-grid>
     </ion-content>
   </ion-page>
