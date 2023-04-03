@@ -36,8 +36,7 @@
 
             <ion-row class="ion-padding-bottom">
               <ion-col size="3">
-                <ion-img class="left-arrow" src="../assets/left-arrow.png">
-                </ion-img>
+              
               </ion-col>
               <ion-col size="6" class="grid ion-justify-content-center">
                 <ion-img
@@ -46,8 +45,7 @@
                 ></ion-img>
               </ion-col>
               <ion-col size="3">
-                <ion-img class="right-arrow" src="../assets/right-arrow.png">
-                </ion-img>
+          
               </ion-col>
             </ion-row>
             <div class="ion-padding-top">
