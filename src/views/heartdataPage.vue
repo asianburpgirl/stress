@@ -6,20 +6,11 @@
       </ion-toolbar>
     </ion-header>
     <ion-content ion-padding>
-      <!-- <ion-grid> -->
-      <ion-row>
-        <ion-col>
-          <div class="chart-container">
-            <Bar :data="heartRateData"></Bar>
-          </div>
-        </ion-col>
-        <ion-col>
-          <div class="chart-container">
-            <LineChart :data="hrvData"></LineChart>
-          </div>
-        </ion-col>
-      </ion-row>
-      <!-- </ion-grid> -->
+    <canvas id="mychart"></canvas>
+    <canvas id="mychart2"></canvas>
+        <div v-for="i in HRresult" :key="i">
+          <p>{{ i["HR"] }}</p>
+        </div>
       <ion-card>
         <ion-card-header>
           <ion-card-title>Heart Rate</ion-card-title>
@@ -33,7 +24,6 @@
           </ion-list>
         </ion-card-content>
       </ion-card>
-
       <ion-card>
         <ion-card-header>
           <ion-card-title>HRV</ion-card-title>
@@ -42,7 +32,8 @@
           <ion-list>
             <ion-item v-for="item in userData" :key="item.id">
               <ion-label>{{ item.label }}</ion-label>
-              <ion-note slot="end">{{ item.amount }}</ion-note>
+              <ion-note :style="{color: 'red'}" v-if="Number(item.amount) < 65" slot="end">{{ item.amount }}</ion-note>
+              <ion-note :style="{color: 'green'}" v-else  slot="end">{{ item.amount }}</ion-note>
             </ion-item>
           </ion-list>
         </ion-card-content>
@@ -51,7 +42,7 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script>
 import {
   IonPage,
   IonHeader,
@@ -70,7 +61,7 @@ import {
   // IonGrid,
   IonCol,
 } from "@ionic/vue";
-import { Bar, Line } from "vue-chartjs";
+
 import {
   Chart as ChartJS,
   Title,
@@ -82,7 +73,7 @@ import {
   PointElement,
   LineElement,
   Chart,
-} from "chart.js";
+} from "chart.js/auto";
 ChartJS.register(
   Title,
   Tooltip,
@@ -96,8 +87,12 @@ ChartJS.register(
 
 import axios from "axios";
 import { defineComponent } from "vue";
+import { isProxy, toRaw } from 'vue';
+import {Bar, Line} from 'vue-chartjs'
+const responseData = "http://127.0.0.1:5000/alldata";
 
 export default defineComponent({
+
   components: {
     IonPage,
     IonHeader,
@@ -105,7 +100,6 @@ export default defineComponent({
     IonTitle,
     IonContent,
     IonCard,
-    IonRow,
     IonNote,
     IonCardContent,
     IonCardHeader,
@@ -114,18 +108,21 @@ export default defineComponent({
     IonLabel,
     IonList,
     // IonGrid,
-    IonCol,
-    Bar,
-    LineChart: Line,
+    //Bar,
+    //Line
+  
   },
-  data() {
+  data(){
     return {
+        dataList: [],
+        HRresult: [],
+      
       heartRateData: {
         labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
         datasets: [
           {
             label: "Heart Rate",
-            data: [78, 82, 79, 85, 90, 92, 88],
+            data: [],
             backgroundColor: "rgba(255, 99, 132, 0.2)",
             borderColor: "rgba(255, 99, 132, 1)",
             borderWidth: 1,
@@ -137,7 +134,7 @@ export default defineComponent({
         datasets: [
           {
             label: "HRV",
-            data: [60, 63, 65, 61, 59, 57, 61],
+            data: [59.24640691,46.89195955,64.40598994,76.24500979,66.0516333,70.89614346277754,67.28650447311502],
             fill: false,
             borderColor: "rgba(54, 162, 235, 1)",
             borderWidth: 1,
@@ -146,78 +143,135 @@ export default defineComponent({
       },
       revenueData: [
         { id: 1, label: "Monday", amount: "78" },
-        { id: 2, label: "Tuesday", amount: "82" },
-        { id: 3, label: "Wednesday", amount: "79" },
-        { id: 4, label: "Thursday", amount: "85" },
-        { id: 5, label: "Friday", amount: "90" },
-        { id: 6, label: "Saturday", amount: "92" },
-        { id: 7, label: "Sunday", amount: "88" },
+        { id: 2, label: "Tuesday", amount: "76" },
+        { id: 3, label: "Wednesday", amount: "71" },
+        { id: 4, label: "Thursday", amount: "78" },
+        { id: 5, label: "Friday", amount: "78" },
+        { id: 6, label: "Saturday", amount: "82" },
+        { id: 7, label: "Sunday", amount: "84" },
       ],
       userData: [
-        { id: 1, label: "Monday", amount: "60" },
-        { id: 2, label: "Tuesday", amount: "63" },
-        { id: 3, label: "Wednesday", amount: "65" },
-        { id: 4, label: "Thursday", amount: "61" },
-        { id: 5, label: "Friday", amount: "59" },
-        { id: 6, label: "Saturday", amount: "57" },
-        { id: 7, label: "Sunday", amount: "61" },
+        { id: 1, label: "Monday", amount: "59" },
+        { id: 2, label: "Tuesday", amount: "46" },
+        { id: 3, label: "Wednesday", amount: "64" },
+        { id: 4, label: "Thursday", amount: "76" },
+        { id: 5, label: "Friday", amount: "66" },
+        { id: 6, label: "Saturday", amount: "70" },
+        { id: 7, label: "Sunday", amount: "67" },
       ],
     };
   },
   mounted() {
-    this.heartdata();
+     this.heartdata()
+     const ctx = document.getElementById('mychart').getContext('2d')
+     axios.get(responseData).then(response =>{
+      const d =  response.data.map(item => item.HR)
+      const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+              datasets: [{
+                label: 'Heart Rate',
+                data: d,
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 99, 132, 0.2)',
+
+                  'rgba(255, 99, 132, 0.2)',
+
+                  'rgba(255, 99, 132, 0.2)',
+
+                  'rgba(255, 99, 132, 0.2)',
+
+                  'rgba(255, 99, 132, 0.2)',
+
+                  'rgba(255, 99, 132, 0.2)'
+                          ],
+                borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth:1
+              }]
+            },
+            options: {
+              responsive: true,
+              scales: {
+                y: {  
+                  beginAtZero: false
+                }
+              }
+            }
+          });
+     });
+     const ctx2 = document.getElementById('mychart2').getContext('2d')
+     axios.get(responseData).then(response =>{
+      const d =  response.data.map(item => item.SDNN)
+      const myChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+              labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+              datasets: [{
+                label: 'HRV',
+                data: d,
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+
+              }]
+            },
+            options: {
+              responsive: true,
+              scales: {
+                y: {
+                  beginAtZero: false
+                }
+              }
+            }
+          });
+     })
   },
   methods: {
-    heartdata() {
-      const url = "http://127.0.0.1:5000/alldata";
-      const HRresult: string[] = [];
-      axios
-        .get(url)
-        .then((response) => {
-          const heartData = response.data;
-          for (const heartRate of heartData) {
-            // console.log(heartRate["Date"]);
-            // this.heartDate = heartRate["HR"];
-            HRresult.push(heartRate["HR"]);
+    heartdata(){
+      try {
+        axios.get(responseData).then(response =>
+          {
+            const data = response.data
+            const HRValue =data.map(item => item.HR);
+            const SDNNValue =data.map(item => item.SDNN)
+            this.revenueData = []
+            this.userData = []
+            
+            const labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+            for (let i = 0 ; i < 7 ; i ++){
+              this.revenueData.push({
+                id : i,
+                label : labels[i],
+                amount : HRValue[i]
+              })
+              this.userData.push({
+                id : i,
+                label : labels[i],
+                amount : SDNNValue[i].toFixed(0)
+              })
+            }
           }
-          console.log(HRresult);
-        })
-        .catch((error) => {
-          console.log(error.message);
-        });
+        )
+        
+      } catch (error) {
+        console.error(error);
+      }
+      
+    }
     },
-    // generateData() {
-    //     const heartRateData = {
-    //         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    //         datasets: [
-    //             {
-    //                 label: 'Heart Rate',
-    //                 data: [78, 82, 79, 85, 90, 92, 88],
-    //                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
-    //                 borderColor: 'rgba(255, 99, 132, 1)',
-    //                 borderWidth: 1,
-    //             }
-    //         ],
-    //     }
-    //     const hrvData = {
-    //         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    //         datasets: [
-    //         {
-    //             label: 'HRV',
-    //             data: [60, 63, 65, 61, 59, 57, 61],
-    //             fill: false,
-    //             borderColor: 'rgba(54, 162, 235, 1)',
-    //             borderWidth: 1,
-    //         },
-    //         ],
-    //     };
-
-    //     this.heartRateData = heartRateData;
-    //     this.hrvData = hrvData;
-
-    // }
   },
-});
+  );
+
 </script>
 
 <style scoped>
