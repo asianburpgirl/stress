@@ -244,7 +244,7 @@
               shape="round"
               fill="outline"
               color="light"
-              href="/tabs/reading"
+              href="/tabs/reading/book"
             >
               Start Reading</ion-button
             >
@@ -274,7 +274,7 @@
               shape="round"
               fill="outline"
               color="dark"
-              href="/tabs/"
+              href="/tabs/support/social"
             >
               Start Communicating</ion-button
             >

@@ -30,27 +30,28 @@ const routes: Array<RouteRecordRaw> = [
       // },
       {
         path: 'breathing',
-        component: BreathingPage
+        component: BreathingPage,
       },
       {
         path: 'reading',
-        component: ReadingPage
+        component: ReadingPage,
       },
       {
         path: 'yoga',
-        component: YogaPage
+        component: YogaPage,
+        
       },
       {
         path: 'gardening',
-        component: GardeningPage
+        component: GardeningPage,
       },
       {
         path: 'support',
-        component: SupportPage
+        component: SupportPage,
       },
       {
         path: 'professional',
-        component: ProfessionalPage
+        component: ProfessionalPage,
       },
       {
         path: 'home',

@@ -22,10 +22,10 @@
                 <ion-row>
                   <ion-col size="2"></ion-col>
                   <ion-col size="4">
-                    <ion-img src="../assets/black-timer.png"></ion-img>
+                    <ion-img src="../assets/timer.png"></ion-img>
                   </ion-col>
                   <ion-col size="4">
-                    <ion-input placeholder="60"></ion-input>
+                    <ion-input placeholder="10"></ion-input>
                   </ion-col>
                   <ion-col size="2">
                     <p>mins</p>
@@ -36,30 +36,28 @@
 
             <ion-row class="ion-padding-bottom">
               <ion-col size="3">
-                <ion-img class="left-arrow" src="../assets/black-arrow.png">
-                </ion-img>
+              
               </ion-col>
               <ion-col size="6" class="grid ion-justify-content-center">
                 <ion-img
                   class="activity"
-                  src="../assets/social-care.png"
+                  src="../assets/deepbreath.png"
                 ></ion-img>
               </ion-col>
               <ion-col size="3">
-                <ion-img class="right-arrow" src="../assets/black-arrow-left.png">
-                </ion-img>
+          
               </ion-col>
             </ion-row>
             <div class="ion-padding-top">
-              <p>You are loved and valued.</p>
-              <p>Surround yourself with people who lift you up and support your growth.</p>
+              <p>Petals flowing in the wind</p>
+              <p>Relax your mind, body, and soul with each breath.</p>
               <ion-button
                 expand="block"
                 shape="round"
-                color="primary"
+                color="tertiary"
                 @click="presentAlert"
               >
-                Start Communicating</ion-button
+                Start Breathing</ion-button
               >
             </div>
           </ion-card-content>
@@ -112,12 +110,12 @@ export default defineComponent({
         header: "Mission Complete!",
         cssClass: "custom-alert",
         message: `
-            <div class="image-container ion-text-center ion-padding-top">
-              <img src="../assets/business.png" alt="My Image">
-              <p>You have earned 15 points!</p>
-            </div>
-            
-          `,
+          <div class="image-container ion-text-center ion-padding-top">
+            <img src="../assets/business.png" alt="My Image">
+            <p>You have earned 15 points!</p>
+          </div>
+          
+        `,
         buttons: [
           {
             text: "Cancel",
@@ -208,7 +206,7 @@ p {
 }
 
 ion-card {
-  background-color: #fbcce8;
+  background-color: #ccd7fb;
 }
 
 ion-col {
