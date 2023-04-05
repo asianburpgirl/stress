@@ -18,27 +18,27 @@
           <img src="../../public/assets/logo.png" />
         </div>
         <ion-card-header class="ion-text-center ion-padding-top">
-          <ion-card-subtitle>
+          <ion-card-title>
             <span style="color: #5678ab">Stress</span
             ><span style="color: #d36fa5">Less</span>
-          </ion-card-subtitle>
+          </ion-card-title>
         </ion-card-header>
-        <ion-row>
-          <ion-col size="12">
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="10">
             <p>Scan with Singpass app to login</p>
           </ion-col>
-          <ion-col size="12">
+          <ion-col size="10">
             <a href="/questionnaire">
               <img src="../../public/assets/singpass.png" class="singpass" style="width: 50%; height: 90%;"/> 
             </a>
           </ion-col>
-          <ion-col size="12">
+          <ion-col size="10">
             <ion-button href="/questionnaire" size="small" style="">
-              <ion-icon slot="start" :icon="lockClosed"></ion-icon>
+              <ion-icon :icon="lockClosed"></ion-icon>
               Use password login instead
             </ion-button>
           </ion-col>
-          <ion-col size="12">
+          <ion-col size="10">
             <p>Don't have the Singpass app?</p>
             <p>
               <a href="/questionnaire">Download now</a>
@@ -62,7 +62,7 @@ import {
   IonRow,
   IonCol,
   IonGrid,
-  IonCardSubtitle,
+  IonCardTitle,
   IonButton,
 } from "@ionic/vue";
 
@@ -81,7 +81,7 @@ export default defineComponent({
     IonRow,
     IonCol,
     IonGrid,
-    IonCardSubtitle,
+    IonCardTitle,
     IonButton,
   },
   setup() {
