@@ -2,66 +2,64 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Activity</ion-title>
+        <ion-title>Social Support</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true" ion-padding>
+    <ion-content :fullscreen="true" class="ion-padding">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Activity</ion-title>
+          <ion-title size="large">Social Support</ion-title>
         </ion-toolbar>
       </ion-header>
       <!-- can make use of ion-grid to contain your stuff -->
       <ion-grid>
-        <ion-card class="ion-padding">
+        <ion-card>
           <ion-card-content class="ion-text-center">
             <ion-row>
-              <ion-col size="3"> </ion-col>
-              <ion-col size="3"> </ion-col>
+              <ion-col size="3"></ion-col>
               <ion-col size="6">
-                <ion-row>
-                  <ion-col size="2"></ion-col>
-                  <ion-col size="4">
-                    <ion-img src="../assets/timer.png"></ion-img>
-                  </ion-col>
-                  <ion-col size="4">
-                    <ion-input placeholder="10"></ion-input>
-                  </ion-col>
-                  <ion-col size="2">
-                    <p>mins</p>
-                  </ion-col>
-                </ion-row>
-              </ion-col>
-            </ion-row>
-
-            <ion-row class="ion-padding-bottom">
-              <ion-col size="3">
-              
-              </ion-col>
-              <ion-col size="6" class="grid ion-justify-content-center">
                 <ion-img
                   class="activity"
-                  src="../assets/deepbreath.png"
+                  src="../assets/social-care.png"
                 ></ion-img>
               </ion-col>
-              <ion-col size="3">
-          
-              </ion-col>
+              <ion-col size="3"> </ion-col>
             </ion-row>
-            <div class="ion-padding-top">
-              <p>Petals flowing in the wind</p>
-              <p>Relax your mind, body, and soul with each breath.</p>
-              <ion-button
-                expand="block"
-                shape="round"
-                color="tertiary"
-                @click="presentAlert"
-              >
-                Start Breathing</ion-button
-              >
-            </div>
           </ion-card-content>
         </ion-card>
+        <ion-grid class="ion-text-center">
+          <ion-row>
+            <ion-col>
+              <b><i>Read 3 articles</i></b>
+            </ion-col>
+            <ion-col> | </ion-col>
+            <ion-col>
+              <b><i>30 points</i></b>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+          <div>
+            <h1><b>Community Bonding</b></h1>
+            <p>
+              Social support refers to the emotional, instrumental, and
+              informational assistance that individuals receive from their
+              social networks, such as family, friends, colleagues, and
+              community members. It is an important component of human
+              well-being and plays a critical role in maintaining physical and
+              mental health.
+            </p>
+          </div>
+          <ion-button
+            expand="block"
+            shape="round"
+            color="tertiary"
+            href="/tabs/support1"
+          >
+            Accept Challenge</ion-button
+          >
+        </ion-grid>
       </ion-grid>
     </ion-content>
   </ion-page>
@@ -81,7 +79,6 @@ import {
   alertController,
   IonRow,
   IonCol,
-  IonInput,
   IonCard,
   // IonItem
 } from "@ionic/vue";
@@ -100,7 +97,6 @@ export default defineComponent({
     IonButton,
     IonRow,
     IonCol,
-    IonInput,
     IonCard,
     // IonItem
   },
@@ -141,9 +137,9 @@ export default defineComponent({
 
 <style scoped>
 .center {
-    padding-top: 20px;
-    padding-bottom: 15px;
-    text-align: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  text-align: center;
 }
 
 ion-alert.custom-alert {
@@ -201,8 +197,6 @@ p {
 .activity {
   width: 130px;
   height: 150px;
-  /* margin-left:30px;  */
-  margin-top: 50px;
 }
 
 ion-card {
@@ -216,21 +210,12 @@ ion-col {
   text-align: center;
 }
 
-ion-img{
+ion-img {
   width: 70%;
   height: 70%;
 }
 
-ion-input.custom {
-    --background: none
-    --placeholder-opacity: .8;
-    --padding-bottom: 10px;
-    --padding-end: 10px;
-    --padding-start: 10px;
-    --padding-top: 10px;
-  }
-
-ion-item{
+ion-item {
   background: none;
 }
 </style>

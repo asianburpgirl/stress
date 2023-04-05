@@ -1,57 +1,30 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Breathing</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content :fullscreen="true" class="ion-padding">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Breathing</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content :fullscreen="true">
       <!-- can make use of ion-grid to contain your stuff -->
+      <ion-img class="activity" src="../assets/professional.webp"></ion-img>
       <ion-grid>
         <ion-card>
           <ion-card-content class="ion-text-center">
-            <ion-row>
-              <ion-col size="3"></ion-col>
-              <ion-col size="6">
-                <ion-img
-                  class="activity"
-                  src="../assets/deepbreath.png"
-                ></ion-img>
-              </ion-col>
-              <ion-col size="3"> </ion-col>
-            </ion-row>
+            National Care Hotline: 1800-202-6868 Purpose: Emotional support
           </ion-card-content>
         </ion-card>
-        <ion-grid class="ion-text-center">
-          <ion-row>
-            <ion-col> <b><i>Do 6 times</i></b> </ion-col>
-            <ion-col> | </ion-col>
-            <ion-col> <b><i>20 points</i></b> </ion-col>
-          </ion-row>
-        </ion-grid>
+        <ion-card>
+          <ion-card-content class="ion-text-center">
+            Institute of Mental Health’s Mental Health Helpline (6389-2222)
+            Purpose: Suicide Prevention
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content class="ion-text-center">
+            Big Love Child Protection Specialist Centre (6445-0400) Purpose:
+            Child Abuse Violence Prevention
+          </ion-card-content>
+        </ion-card>
 
         <ion-grid>
-          <div>
-            <h1><b>Take a moment to free your mind</b></h1>
-            <p>
-              Breathing exercises can relieve stress by promoting relaxation and
-              reducing the "fight or flight" response. As you take deeper,
-              slower breaths, the muscles in your body become less tense and
-              your mind becomes calmer.
-            </p>
-          </div>
-          <ion-button
-            expand="block"
-            shape="round"
-            color="tertiary"
-            href="/tabs/breathe"
-          >
-            Accept Challenge</ion-button
+          <ion-button expand="block" color="tertiary" @click="presentAlert">
+            Done Challenge</ion-button
           >
         </ion-grid>
       </ion-grid>
@@ -63,16 +36,16 @@
 import { ref, defineComponent } from "vue";
 import {
   IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
+  // IonHeader,
+  // IonToolbar,
+  // IonTitle,
   IonContent,
   IonGrid,
   IonImg,
   IonButton,
   alertController,
-  IonRow,
-  IonCol,
+  // IonRow,
+  // IonCol,
   IonCard,
   // IonItem
 } from "@ionic/vue";
@@ -82,15 +55,15 @@ import router from "../router/index";
 export default defineComponent({
   components: {
     IonPage,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
+    // IonHeader,
+    // IonToolbar,
+    // IonTitle,
     IonContent,
     IonGrid,
     IonImg,
     IonButton,
-    IonRow,
-    IonCol,
+    // IonRow,
+    // IonCol,
     IonCard,
     // IonItem
   },
@@ -100,12 +73,12 @@ export default defineComponent({
         header: "Mission Complete!",
         cssClass: "custom-alert",
         message: `
-          <div class="image-container ion-text-center ion-padding-top">
-            <img src="../assets/business.png" alt="My Image">
-            <p>You have earned 15 points!</p>
-          </div>
-          
-        `,
+                <div class="image-container ion-text-center ion-padding-top">
+                  <img src="../assets/business.png" alt="My Image">
+                  <p>You have earned 150 points!</p>
+                </div>
+                
+              `,
         buttons: [
           {
             text: "Cancel",
@@ -174,28 +147,11 @@ p {
   color: black;
 }
 
-.left-arrow {
-  width: 50px;
-  height: 50px;
-  /* margin-left: -10px; */
-  margin-top: 100px;
-}
 
-.right-arrow {
-  width: 50px;
-  height: 50px;
-  /* margin-left: 20px; */
-  margin-top: 100px;
-}
-
-.activity {
+/* .activity {
   width: 130px;
   height: 150px;
-}
-
-ion-card {
-  background-color: #ccd7fb;
-}
+} */
 
 ion-col {
   display: flex;
@@ -204,11 +160,14 @@ ion-col {
   text-align: center;
 }
 
-ion-img{
-  width: 70%;
-  height: 70%;
-}
-
+ion-input.custom {
+    --background: none
+    --placeholder-opacity: .8;
+    --padding-bottom: 10px;
+    --padding-end: 10px;
+    --padding-start: 10px;
+    --padding-top: 10px;
+  }
 
 ion-item{
   background: none;

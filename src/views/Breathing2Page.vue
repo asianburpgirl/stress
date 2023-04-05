@@ -1,62 +1,55 @@
 <template>
   <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Gardening</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content :fullscreen="true" class="ion-padding">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Gardening</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content :fullscreen="true">
       <!-- can make use of ion-grid to contain your stuff -->
+      <ion-img class="activity" src="../assets/breathing1.png"></ion-img>
       <ion-grid>
         <ion-card>
           <ion-card-content class="ion-text-center">
-            <ion-row>
-              <ion-col size="3"></ion-col>
-              <ion-col size="6">
-                <ion-img
-                  class="activity"
-                  src="../assets/gardening_activity.png"
-                ></ion-img>
-              </ion-col>
-              <ion-col size="3"> </ion-col>
-            </ion-row>
+            Find a comfortable seated or lying position, with your back straight
+            and your hands resting comfortably in your lap.
           </ion-card-content>
         </ion-card>
-        <ion-grid class="ion-text-center">
-          <ion-row>
-            <ion-col>
-              <b><i>Do 1 time</i></b>
-            </ion-col>
-            <ion-col> | </ion-col>
-            <ion-col>
-              <b><i>50 points</i></b>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+        <ion-card>
+          <ion-card-content class="ion-text-center">
+            Close your eyes and bring your attention to your breath. Notice the
+            sensation of the air moving in and out of your body.
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content class="ion-text-center">
+            Begin to take slow, deep breaths, focusing on filling your lungs
+            fully and exhaling completely.
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content class="ion-text-center">
+            If your mind begins to wander, gently bring your focus back to your
+            breath. Don't judge yourself for losing focus; simply acknowledge
+            the distraction and redirect your attention.
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content class="ion-text-center">
+            Try to maintain this focus for several minutes, or for as long as
+            feels comfortable.
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content class="ion-text-center">
+            When you're ready to end your practice, take a few final deep
+            breaths and slowly open your eyes.
+          </ion-card-content>
+        </ion-card>
+        
 
         <ion-grid>
-          <div>
-            <h1><b>Planting your seeds</b></h1>
-            <p>
-              Gardening can relieve stress by providing a calming and meditative
-              activity that connects you to nature. Working with plants can be
-              therapeutic and provide a sense of purpose and accomplishment.
-              Additionally, spending time outdoors and getting fresh air and
-              sunlight can help boost mood and reduce anxiety.
-            </p>
-          </div>
           <ion-button
             expand="block"
-            shape="round"
             color="tertiary"
-            href="/tabs/garden1"
+            @click="presentAlert"
           >
-            Accept Challenge</ion-button
+            Done Challenge</ion-button
           >
         </ion-grid>
       </ion-grid>
@@ -68,16 +61,16 @@
 import { ref, defineComponent } from "vue";
 import {
   IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
+  // IonHeader,
+  // IonToolbar,
+  // IonTitle,
   IonContent,
   IonGrid,
   IonImg,
   IonButton,
   alertController,
-  IonRow,
-  IonCol,
+  // IonRow,
+  // IonCol,
   IonCard,
   // IonItem
 } from "@ionic/vue";
@@ -87,15 +80,15 @@ import router from "../router/index";
 export default defineComponent({
   components: {
     IonPage,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
+    // IonHeader,
+    // IonToolbar,
+    // IonTitle,
     IonContent,
     IonGrid,
     IonImg,
     IonButton,
-    IonRow,
-    IonCol,
+    // IonRow,
+    // IonCol,
     IonCard,
     // IonItem
   },
@@ -105,12 +98,12 @@ export default defineComponent({
         header: "Mission Complete!",
         cssClass: "custom-alert",
         message: `
-          <div class="image-container ion-text-center ion-padding-top">
-            <img src="../assets/business.png" alt="My Image">
-            <p>You have earned 15 points!</p>
-          </div>
-          
-        `,
+            <div class="image-container ion-text-center ion-padding-top">
+              <img src="../assets/business.png" alt="My Image">
+              <p>You have earned 20 points!</p>
+            </div>
+            
+          `,
         buttons: [
           {
             text: "Cancel",
@@ -136,9 +129,9 @@ export default defineComponent({
 
 <style scoped>
 .center {
-  padding-top: 20px;
-  padding-bottom: 15px;
-  text-align: center;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    text-align: center;
 }
 
 ion-alert.custom-alert {
@@ -179,28 +172,11 @@ p {
   color: black;
 }
 
-.left-arrow {
-  width: 50px;
-  height: 50px;
-  /* margin-left: -10px; */
-  margin-top: 100px;
-}
 
-.right-arrow {
-  width: 50px;
-  height: 50px;
-  /* margin-left: 20px; */
-  margin-top: 100px;
-}
-
-.activity {
+/* .activity {
   width: 130px;
   height: 150px;
-}
-
-ion-card {
-  background-color: #ccd7fb;
-}
+} */
 
 ion-col {
   display: flex;
@@ -209,12 +185,16 @@ ion-col {
   text-align: center;
 }
 
-ion-img {
-  width: 70%;
-  height: 70%;
-}
+ion-input.custom {
+    --background: none
+    --placeholder-opacity: .8;
+    --padding-bottom: 10px;
+    --padding-end: 10px;
+    --padding-start: 10px;
+    --padding-top: 10px;
+  }
 
-ion-item {
+ion-item{
   background: none;
 }
 </style>

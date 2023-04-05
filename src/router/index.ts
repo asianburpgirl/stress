@@ -9,6 +9,7 @@ import YogaPage from '../views/YogaPage.vue';
 import ReadingPage from '../views/ReadingPage.vue';
 import SupportPage from '../views/SocialSupport.vue';
 import ProfessionalPage from '../views/ProfessionalPage.vue';
+import Breathing2Page from '../views/Breathing2Page.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -72,6 +73,30 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'heartdata',
         component: () => import('@/views/heartdataPage.vue')
+      },
+      {
+        path: 'breathe',
+        component: () => import('@/views/Breathing2Page.vue')
+      },
+      {
+        path: 'yoga1',
+        component: () => import('@/views/Yoga2Page.vue')
+      },
+      {
+        path: 'garden1',
+        component: () => import('@/views/Gardening2Page.vue')
+      },
+      {
+        path: 'read',
+        component: () => import('@/views/Reading2Page.vue')
+      },
+      {
+        path: 'help',
+        component: () => import('@/views/Professional2Page.vue')
+      },
+      {
+        path: 'support1',
+        component: () => import('@/views/SocialSupportPage.vue')
       }
     ]
   }
