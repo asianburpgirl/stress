@@ -51,8 +51,8 @@
           </ion-card-content>
         </ion-card>
       </ion-grid>
-      <ion-grid class="ion-padding">
-        <h4 >Recommended Therapies</h4>
+      <!-- <ion-grid class="ion-padding">
+        <h4>Recommended Therapies</h4>
         <ion-row>
           <ion-col size="6 " size-md="6">
             <ion-card
@@ -137,133 +137,179 @@
             </ion-card>
           </ion-col>
         </ion-row>
-      </ion-grid>
-      <ion-grid class="ion-padding">
-        <h4>Examples</h4>
-        <ion-card color="tertiary">
+      </ion-grid> -->
+      <ion-grid class="ion-padding" v-if="result1 != 'None'">
+        <h4>Recommended Therapies</h4>
+        <ion-card color="tertiary" v-if="result1 === 'Self-help Methods' || result1 === 'Both'">
           <ion-card-header>
             <ion-card-title> Breathe </ion-card-title>
-            <ion-card-content>
-              <p>Petals flowing in the wind</p>
-              <p>Relax your mind, body, and soul with each breath.</p>
-              <ion-button
-                class="ion-padding"
-                expand="block"
-                shape="round"
-                fill="outline"
-                color="dark"
-                href="/tabs/breathing"
-              >
-                Start Breathing</ion-button
-              >
-            </ion-card-content>
           </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col>
+                <img src="../../public/assets/breathing.png" />
+              </ion-col>
+              <ion-col size="10">
+                <p>Petals flowing in the wind</p>
+                <p>Relax your mind, body, and soul with each breath.</p>
+              </ion-col>
+            </ion-row>
+
+            <ion-button
+              class="ion-padding"
+              expand="block"
+              shape="round"
+              fill="outline"
+              color="light"
+              href="/tabs/breathing"
+            >
+              Start Breathing</ion-button
+            >
+          </ion-card-content>
         </ion-card>
-        <ion-card color="primary">
+        <ion-card color="primary"  v-if="result1 === 'Self-help Methods' || result1 === 'Both'">
           <ion-card-header>
             <ion-card-title> Yoga </ion-card-title>
-            <ion-card-content>
-              <p>Find balance in your practice and in your life</p>
-              <ion-button
-                class="ion-padding"
-                expand="block"
-                shape="round"
-                fill="outline"
-                color="dark"
-                href="/tabs/yoga"
-              >
-                Start Session</ion-button
-              >
-            </ion-card-content>
           </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col>
+                <img src="../../public/assets/yoga1.png" />
+              </ion-col>
+              <ion-col size="10">
+                <p>Find balance in your practice and in your life</p>
+              </ion-col>
+            </ion-row>
+            <ion-button
+              class="ion-padding"
+              expand="block"
+              shape="round"
+              fill="outline"
+              color="light"
+              href="/tabs/yoga"
+            >
+              Start Session</ion-button
+            >
+          </ion-card-content>
         </ion-card>
-        <ion-card color="success">
+        <ion-card color="success" v-if="result1 === 'Self-help Methods' || result1 === 'Both'">
           <ion-card-header>
             <ion-card-title> Gardening </ion-card-title>
-            <ion-card-content>
-              <p>Start planting your seeds</p>
-              <p>
-                Relax your mind, body, and soul as you embark on your gardening
-                journey.
-              </p>
-              <ion-button
-                class="ion-padding"
-                expand="block"
-                shape="round"
-                fill="outline"
-                color="dark"
-                href="/tabs/gardening"
-              >
-                Start Gardening</ion-button
-              >
-            </ion-card-content>
           </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col>
+                <img src="../../public/assets/gardening1.png" />
+              </ion-col>
+              <ion-col size="10">
+                <p>Start planting your seeds</p>
+                <p>
+                  Relax your mind, body, and soul as you embark on your
+                  gardening journey.
+                </p>
+              </ion-col>
+            </ion-row>
+            <ion-button
+              class="ion-padding"
+              expand="block"
+              shape="round"
+              fill="outline"
+              color="light"
+              href="/tabs/gardening"
+            >
+              Start Gardening</ion-button
+            >
+          </ion-card-content>
         </ion-card>
-        <ion-card color="secondary">
+        <ion-card color="secondary" v-if="result1 === 'Self-help Methods' || result1 === 'Both'">
           <ion-card-header>
             <ion-card-title> Reading </ion-card-title>
-            <ion-card-content>
-              <p>Breaking the Stigma: My Journey with Mental Health</p>
-              <p>
-                Relax your mind, body, and soul with each turn of page of this
-                masterpiece.
-              </p>
-              <ion-button
-                class="ion-padding"
-                expand="block"
-                shape="round"
-                fill="outline"
-                color="dark"
-                href="/tabs/reading"
-              >
-                Start Reading</ion-button
-              >
-            </ion-card-content>
           </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col>
+                <img src="../../public/assets/reading.png" />
+              </ion-col>
+              <ion-col size="10">
+                <p>Breaking the Stigma: My Journey with Mental Health</p>
+                <p>
+                  Relax your mind, body, and soul with each turn of page of this
+                  masterpiece.
+                </p>
+              </ion-col>
+            </ion-row>
+            <ion-button
+              class="ion-padding"
+              expand="block"
+              shape="round"
+              fill="outline"
+              color="light"
+              href="/tabs/reading"
+            >
+              Start Reading</ion-button
+            >
+          </ion-card-content>
         </ion-card>
-        <ion-card color="light">
+        <ion-card color="light" v-if="result1 === 'Need Social Support' || result1 === 'Both'">
           <ion-card-header>
             <ion-card-title> Social Support </ion-card-title>
-            <ion-card-content>
-              <p>You are loved and valued.</p>
-              <p>
-                Surround yourself with people who lift you up and support your
-                growth.
-              </p>
-              <ion-button
-                class="ion-padding"
-                expand="block"
-                shape="round"
-                fill="outline"
-                color="dark"
-                @click="presentAlert"
-              >
-                Start Communicating</ion-button
-              >
-            </ion-card-content>
           </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col>
+                <img src="../../public/assets/socialsupport.png" />
+              </ion-col>
+              <ion-col size="10">
+                <p>You are loved and valued.</p>
+                <p>
+                  Surround yourself with people who lift you up and support your
+                  growth.
+                </p>
+              </ion-col>
+            </ion-row>
+
+            <ion-button
+              class="ion-padding"
+              expand="block"
+              shape="round"
+              fill="outline"
+              color="dark"
+              href="/tabs/"
+            >
+              Start Communicating</ion-button
+            >
+          </ion-card-content>
         </ion-card>
-        <ion-card color="medium">
+
+        <ion-card color="medium"  v-if="result1 === 'Need Social Support' || result1 === 'Both'">
           <ion-card-header>
             <ion-card-title> Professional Help </ion-card-title>
-            <ion-card-content>
-              <p>You are loved and valued.</p>
-              <p>
-                Surround yourself with people who lift you up and support your
-                growth.
-              </p>
-              <ion-button
-                class="ion-padding"
-                expand="block"
-                shape="round"
-                fill="outline"
-                color="dark"
-                @click="presentAlert"
-              >
-                Start Communicating</ion-button
-              >
-            </ion-card-content>
           </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col>
+                <img src="../../public/assets/professional.png" />
+              </ion-col>
+              <ion-col size="10">
+                <p>You are loved and valued.</p>
+                <p>
+                  Surround yourself with people who lift you up and support your
+                  growth.
+                </p>
+              </ion-col>
+            </ion-row>
+
+            <ion-button
+              class="ion-padding"
+              expand="block"
+              shape="round"
+              fill="outline"
+              color="light"
+              @click="presentAlert"
+            >
+              Start Communicating</ion-button
+            >
+          </ion-card-content>
         </ion-card>
       </ion-grid>
     </ion-content>
@@ -285,10 +331,9 @@ import {
   IonRow,
   IonCol,
   IonGrid,
-  // IonImg,
   IonCardContent,
   alertController,
-  IonCardTitle
+  IonCardTitle,
 } from "@ionic/vue";
 
 import { defineComponent } from "vue";
@@ -309,9 +354,8 @@ export default defineComponent({
     IonRow,
     IonCol,
     IonGrid,
-    // IonImg,
     IonCardContent,
-    IonCardTitle
+    IonCardTitle,
   },
   data() {
     return {
