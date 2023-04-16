@@ -141,6 +141,7 @@
       <ion-grid class="ion-padding" v-if="result1 != 'None'">
         <h4>Recommended Therapies</h4>
         <ion-card color="tertiary" v-if="result1 === 'Self-help Methods' || result1 === 'Both'">
+        <!-- <ion-card color="tertiary"> -->
           <ion-card-header>
             <ion-card-title> Breathe </ion-card-title>
           </ion-card-header>
@@ -167,7 +168,11 @@
             >
           </ion-card-content>
         </ion-card>
-        <ion-card color="primary"  v-if="result1 === 'Self-help Methods' || result1 === 'Both'">
+        <!-- <ion-card color="primary"> -->
+          <ion-card
+          color="primary"
+          v-if="result1 === 'Self-help Methods' || result1 === 'Both'"
+        >
           <ion-card-header>
             <ion-card-title> Yoga </ion-card-title>
           </ion-card-header>
@@ -192,7 +197,11 @@
             >
           </ion-card-content>
         </ion-card>
-        <ion-card color="success" v-if="result1 === 'Self-help Methods' || result1 === 'Both'">
+        <!-- <ion-card color="success"> -->
+          <ion-card
+          color="success"
+          v-if="result1 === 'Self-help Methods' || result1 === 'Both'"
+        >
           <ion-card-header>
             <ion-card-title> Gardening </ion-card-title>
           </ion-card-header>
@@ -221,7 +230,11 @@
             >
           </ion-card-content>
         </ion-card>
-        <ion-card color="secondary" v-if="result1 === 'Self-help Methods' || result1 === 'Both'">
+        <!-- <ion-card color="secondary"> -->
+          <ion-card
+          color="secondary"
+          v-if="result1 === 'Self-help Methods' || result1 === 'Both'"
+        >
           <ion-card-header>
             <ion-card-title> Reading </ion-card-title>
           </ion-card-header>
@@ -250,7 +263,11 @@
             >
           </ion-card-content>
         </ion-card>
-        <ion-card color="light" v-if="result1 === 'Need Social Support' || result1 === 'Both'">
+        <!-- <ion-card color="light"> -->
+          <ion-card
+          color="light"
+          v-if="result1 === 'Need Social Support' || result1 === 'Both'"
+        >
           <ion-card-header>
             <ion-card-title> Social Support </ion-card-title>
           </ion-card-header>
@@ -280,8 +297,11 @@
             >
           </ion-card-content>
         </ion-card>
-
-        <ion-card color="medium"  v-if="result1 === 'Need Social Support' || result1 === 'Both'">
+        <!-- <ion-card color="medium"> -->
+          <ion-card
+          color="medium"
+          v-if="result1 === 'Need Social Support' || result1 === 'Both'"
+        >
           <ion-card-header>
             <ion-card-title> Professional Help </ion-card-title>
           </ion-card-header>
