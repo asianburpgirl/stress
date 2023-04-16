@@ -23,7 +23,7 @@ StressLess is created with:
 - Ensure that NPM and node.js is installed. https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-installer-to-install-node-js-and-npm
 - Ensure that git is installed. https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 - Choose a folder which you want to store the repo and go into the folder
-git clone "<gitrepo>" to clone the new repo and change directory into the folder
+git clone "https://github.com/asianburpgirl/stress.git" to clone the new repo and change directory into the folder
 
 ### Starting the Project
 
