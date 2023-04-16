@@ -33,8 +33,10 @@ Run "npm install" to download all dependencies
 
 ### Compiles and hot-reloads for development
 
-If there is any issues, please contact the developers of the project for help.
+If there are any issues, please contact the developers of the project for help.
 
 ```
 Run "ionic serve / npm run serve" on the command line to run the application
+Cd "app" on the command line and run "python app.py" 
 ```
+
