@@ -37,6 +37,6 @@ If there are any issues, please contact the developers of the project for help.
 
 ```
 Run "ionic serve / npm run serve" on the command line to run the application
-Cd "app" on the command line and run "python app.py" 
+Cd "app" and run "python app.py" on the command line
 ```
 
