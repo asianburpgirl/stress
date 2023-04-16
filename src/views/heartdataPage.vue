@@ -56,7 +56,6 @@ import {
   IonTitle,
   IonContent,
   IonCard,
-  IonRow,
   IonNote,
   IonCardContent,
   IonCardHeader,
@@ -64,8 +63,6 @@ import {
   IonItem,
   IonLabel,
   IonList,
-  // IonGrid,
-  IonCol,
 } from "@ionic/vue";
 
 import {
@@ -112,9 +109,6 @@ export default defineComponent({
     IonItem,
     IonLabel,
     IonList,
-    // IonGrid,
-    //Bar,
-    //Line
   },
   data() {
     return {
